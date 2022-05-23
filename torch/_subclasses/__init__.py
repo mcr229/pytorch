@@ -1,10 +1,11 @@
 import torch
 
 from torch._subclasses.base_tensor import BaseTensor
-from torch._subclasses.fake_tensor import FakeTensor, _device_not_kwarg_ops
+from torch._subclasses.fake_tensor import FakeTensor, _device_not_kwarg_ops, _is_tensor_constructor
 
 _all__ = [
   "BaseTensor",
   "FakeTensor",
-  "_device_not_kwarg_ops"
+  "_device_not_kwarg_ops",
+  "_is_tensor_constructor",
 ]
