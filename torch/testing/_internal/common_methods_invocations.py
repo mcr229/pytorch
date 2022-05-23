@@ -19316,6 +19316,19 @@ python_ref_db = [
         validate_view_consistency=False
     ),
     #
+    # Linear Algebra Operators
+    #
+    PythonRefInfo(
+        "_refs.addr",
+        torch_opinfo_name="addr",
+        decorators=(
+            # No meta support for torch.tensor
+            DecorateInfo(unittest.expectedFailure, 'TestCommon', 'test_python_reference_meta_functions',),
+            # RuntimeError: no _refs support for torch.outer
+            DecorateInfo(unittest.expectedFailure, 'TestCommon', 'test_python_reference_consistency',),
+        ),
+    ),
+    #
     # Tensor Creation Reference OpInfos
     #
     PythonRefInfo(
